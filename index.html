@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="jscode.js"></script>
+    <title>DZ20</title>
+</head>
+<body>
+<div class="block">
+    <h2>Задание №1</h2>
+    <h3>Создать "список покупок"</h3>
+    <div class="block-list inputForm">
+        <div class= "block-list listCard">
+            <button onclick="arrayAllCardList()">Весь список товаров</button>
+            <hr>
+            <p id="out1" class="clear">Результат: </p>
+        </div>
+        <div class="block-list newCard">
+            <button class="newCard-but" onclick="arrayCardAdd()">Добавить новый товар</button>
+            <label for="n22">Введите название:<input type="text" placeholder="Введите название" id="n22" class="clear"></label>
+            <label for="n23">Введите количество:<input type="number" placeholder="Введите количество" id="n23" class="clear"></label>
+            <label for="n23">Введите цену:<input type="number" placeholder="Введите цену" id="n24" class="clear"></label>
+            <p id="out2" class="clear">Добавленный элемент: </p>
+        </div>
+        <div class="block-list CardBay">
+          <button onclick="reload()">Обновить</button>
+            <div class="checkBox">
+                <select class="selected" name="selected" id="sel-1"></select>
+                <p class="price" id="priceBay"></p>
+                <input type="number"id="i-1">
+            </div>
+            <button onclick="arrayCardBay()" id="b-2">Покупаю</button>
+            <p id="out3">
+                <ol id="ol1"></ol>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="block">
+    <span>ЧЕК</span>
+<div class="check">
+    <div class="check-title">
+<p>Наименование товара</p>
+    <p>Количество</p>
+    </div>
+    <p>Итого</p>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+*{box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.block {
+    width: 600px;
+   margin: 1%;
+    padding: 1em;
+   background: #97eda7;
+    border: 1px solid #f0e44c;
+}
+.block-list{
+
+    margin: 0.4em;
+}
+p >input::placeholder {
+    opacity: 0.2;
+    color: green;
+}
+p{
+    margin: 1em;
+}
+.inputForm{
+    width: 600px;
+  display: flex;
+
+}
+.newCard {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    width: 33%;
+}
+.newCard-but{
+    align-self: flex-start;
+}
+.CardBay{
+    width: 33%;
+}
+.paragrach{
+    font-family: cursive;
+    font-weight: bold;
+}
+button {
+    margin: .3em;
+}
+.checkBox{
+    display: flex;
+    justify-content: space-between;
+    background-color: bisque;
+    margin: 0.5em;
+}
+.checkBox>input{
+    width: 40px;
+}
+.price{
+    flex: 1 1 auto;
+}
+.selected{
+    flex: 2 1 auto;
+}
+.check{
+    width: 90%;
+    min-height: 100px;
+    margin: 1em;
+    background-color: lemonchiffon;
+    border-top-left-radius: 125px 17px;
+    border-bottom-right-radius: 125px 17px;
+    border-bottom-left-radius: 125px 17px;
+    border-top-right-radius: 125px 17px;
+}
+.check-title{
+    display: flex;
+}
+span{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: medium;
+}

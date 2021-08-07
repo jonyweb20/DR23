@@ -3,49 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
-    <script src="jscode.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="taskOneAndTwo.js"></script>
+    <script src="taskThree.js"></script>
+
     <title>DZ20</title>
 </head>
 <body>
 <div class="block">
-    <h2>Задание №1</h2>
+    <h2>Задание №1 и №2</h2>
     <h3>Создать "список покупок"</h3>
     <div class="block-list inputForm">
-        <div class= "block-list listCard">
+        <div class="block-list listCard">
             <button onclick="arrayAllCardList()">Весь список товаров</button>
             <hr>
             <p id="out1" class="clear">Результат: </p>
+            <div class="block-list checkBox listDel">
+                <select class="selected" name="selected" id="sel-2"></select>
+                <button onclick="delList()">Удалить товар</button>
+            </div>
+
         </div>
         <div class="block-list newCard">
             <button class="newCard-but" onclick="arrayCardAdd()">Добавить новый товар</button>
             <label for="n22">Введите название:<input type="text" placeholder="Введите название" id="n22" class="clear"></label>
-            <label for="n23">Введите количество:<input type="number" placeholder="Введите количество" id="n23" class="clear"></label>
-            <label for="n23">Введите цену:<input type="number" placeholder="Введите цену" id="n24" class="clear"></label>
+            <label for="n23">Введите количество:<input type="number" placeholder="Введите количество" id="n23"
+                                                       class="clear" min="0"></label>
+            <label for="n24">Введите цену:<input type="number" placeholder="Введите цену" id="n24" min="0"
+                                                 class="clear"></label>
             <p id="out2" class="clear">Добавленный элемент: </p>
         </div>
         <div class="block-list CardBay">
-          <button onclick="reload()">Обновить</button>
+            <button onclick="reload()">Обновить данные для покупки</button>
             <div class="checkBox">
                 <select class="selected" name="selected" id="sel-1"></select>
                 <p class="price" id="priceBay"></p>
-                <input type="number"id="i-1">
+                <input type="number" id="i-1" min="0">
             </div>
             <button onclick="arrayCardBay()" id="b-2">Покупаю</button>
-            <p id="out3">
-                <ol id="ol1"></ol>
-            </p>
         </div>
     </div>
 </div>
 <div class="block">
-    <span>ЧЕК</span>
-<div class="check">
-    <div class="check-title">
-<p>Наименование товара</p>
-    <p>Количество</p>
+    <h2>ЧЕК</h2>
+    <div class="check">
+        <ol class="checkList">
+            <li class = "checkListItem">
+                <ul class="check-title">
+                    <li id="p2">Наименование товара</li>
+                    <li id="p3">Количество</li>
+                    <li id="p4">Цена</li>
+                </ul>
+            </li>
+        </ol>
+        <p id="p5">Итого</p>
     </div>
-    <p>Итого</p>
 </div>
+
+<div class="block blockThree">
+    <h2>Задание №3</h2>
+    <h3>Работа с массивом стилей</h3>
+    <input type="text" class="exampleText" placeholder="введите текст" style="width: 90%">
+<div class="block-style">
+    <label>color:
+        <input type="color" class="colors"id="col-1">
+    </label>
+    <label for="fz">font-size:</label><select name="font-size" id="fz"></select>
+    <label for="sel-3">font-weight:</label><select name="font-weight" id="sel-3"></select>
+    <label for="sel-4">letter-spacing:</label><select name="letter-spacing" id="sel-4"></select>
+    <label for="sel-5">text-decoration:</label><select name="text-decoration" id="sel-5"></select>
+</div>
+    <p id="outText">Результат:</p>
+    <div>
+        <button type="button" onclick="textStyle()">Выполнить</button>
+        <button type="button" onclick="complete()"> Обновить </button>
+    </div>
+</div>
+<div class="blockFour">
+
 </div>
 </body>
 </html>

@@ -100,5 +100,42 @@ h2{
     justify-content: space-around;
     margin-top: 1em;
     background-color: khaki;
+}
+.btnF{
+    background-color: cornflowerblue;
+    border-radius: 0.3em;
+}
+.table{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+.menu{
+    display: flex;
+}
+.menu-btn-item {
+    margin: 3% 1% 5%;
+}
+.btn-all{
+    border: 3px solid greenyellow;
+    border-radius: 17%;
+
+}
+.btn-all:hover{
+    box-shadow: 1px 3px 5px cornflowerblue;
+}
+.menu-out{
+    border: 1px solid cornflowerblue;
+    min-width: 200px;
+}
+.roomTitle{
+    display: flex;
+    justify-content: space-around;
+}
+.textOut{
+font-size: 18px;
+    letter-spacing: 0.2em;
+    color: crimson;
+    font-weight: bold;
 
 }

@@ -3,10 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="taskOneAndTwo.js"></script>
-    <script src="taskThree.js"></script>
-
     <title>DZ20</title>
 </head>
 <body>
@@ -48,7 +44,7 @@
     <h2>ЧЕК</h2>
     <div class="check">
         <ol class="checkList">
-            <li class = "checkListItem">
+            <li class="checkListItem">
                 <ul class="check-title">
                     <li id="p2">Наименование товара</li>
                     <li id="p3">Количество</li>
@@ -59,28 +55,75 @@
         <p id="p5">Итого</p>
     </div>
 </div>
-
 <div class="block blockThree">
     <h2>Задание №3</h2>
     <h3>Работа с массивом стилей</h3>
     <input type="text" class="exampleText" placeholder="введите текст" style="width: 90%">
-<div class="block-style">
-    <label>color:
-        <input type="color" class="colors"id="col-1">
-    </label>
-    <label for="fz">font-size:</label><select name="font-size" id="fz"></select>
-    <label for="sel-3">font-weight:</label><select name="font-weight" id="sel-3"></select>
-    <label for="sel-4">letter-spacing:</label><select name="letter-spacing" id="sel-4"></select>
-    <label for="sel-5">text-decoration:</label><select name="text-decoration" id="sel-5"></select>
-</div>
+    <div class="block-style">
+        <label>color:
+            <input type="color" class="colors" id="col-1">
+        </label>
+        <label for="fz">font-size:</label><select name="font-size" id="fz"></select>
+        <label for="sel-3">font-weight:</label><select name="font-weight" id="sel-3"></select>
+        <label for="sel-4">letter-spacing:</label><select name="letter-spacing" id="sel-4"></select>
+        <label for="sel-5">text-decoration:</label><select name="text-decoration" id="sel-5"></select>
+    </div>
     <p id="outText">Результат:</p>
     <div>
         <button type="button" onclick="textStyle()">Выполнить</button>
-        <button type="button" onclick="complete()"> Обновить </button>
+        <button type="button" onclick="complete()"> Обновить</button>
     </div>
 </div>
-<div class="blockFour">
+<div class="block blockFour">
+    <h2>Задание №4</h2>
+    <h3>Работа с аудиториями</h3>
+    <div class="block-klass">
+        <div class="room">
+            <table id="tab1">
+                <thead>
+                <tr class="table-title">
+                    <th>
+                        <button class="btnF btn-room" type="button" onclick="sortForRoom()">Сортировать по аудитории</button>
+                    </th>
+                    <th>
+                        <button class="btnF btn-place" type="button" onclick="sortForPlace()">Сортировать по местам</button>
+                    </th>
 
+                </tr>
+                </thead>
+                <tbody class="table">
+
+                </tbody>
+            </table>
+        </div>
+        <div class="menu">
+            <div class="menu-btn">
+                <div class="menu-btn-item menu-all">
+                    <button class="btn-all" type="button" value="roomAll" onclick="allRoom()">Показать все аудитории
+                    </button>
+                </div>
+                <div class="menu-btn-item menu-faculty">
+                    <select name="selectFaculty" id="sel-10"></select>
+                    <button class="btn-ff" type="button" value="roomFaculty" onclick="selectFaculty()">Показать аудитории для факультета</button>
+                </div>
+                <div class="menu-btn-item menu-room">
+                    <input type="text" name="nameGroup" id="i-11" placeholder="название группы">
+                    <input type="number" id="i-12">
+                    <select name="selectFacultyForGroup" id="sel-11"></select>
+                    <button class="btn-fg" type="button" value="roomGroup" onclick="selectRoomForGroup()">Показать аудитории для группы</button>
+                </div>
+            </div>
+            <div class="menu-out" id="out-11">
+               <p class="roomTitle"></p>
+                <p class="room-ForFaculty"></p>
+                <p class="room-ForGroup"></p>
+            </div>
+        </div>
+    </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="taskOneAndTwo.js"></script>
+<script src="taskThree.js"></script>
+<script src="taskFour.js"></script>
 </body>
 </html>

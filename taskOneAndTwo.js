@@ -1,14 +1,14 @@
-let arr = [{name: 'BMW', qty: 1, price: 750}, {name: 'Nissan', qty: 2, price: 800}, {
+let arrAuto = [{name: 'BMW', qty: 1, price: 750}, {name: 'Nissan', qty: 2, price: 800}, {
     name: 'Lada', qty: 3, price: 345
 }, {name: 'WW', qty: 1, price: 899}];
 
 function arrayCard(el1, el2, el3) {
-    if (arr.length !== 0) {
-        for (let i = 0; i < arr.length; i++) {
-            if (arr[i].name.indexOf(el1) !== -1) {
-                arr[i].qty += el2;
-                arr[i].price = el3;
-                return arr;
+    if (arrAuto.length !== 0) {
+        for (let i = 0; i < arrAuto.length; i++) {
+            if (arrAuto[i].name.indexOf(el1) !== -1) {
+                arrAuto[i].qty += el2;
+                arrAuto[i].price = el3;
+                return arrAuto;
             }
         }
     }
@@ -16,8 +16,8 @@ function arrayCard(el1, el2, el3) {
     cardAdd.name = el1;
     cardAdd.qty = el2;
     cardAdd.price = el3;
-    arr.push(cardAdd);
-    return arr;
+    arrAuto.push(cardAdd);
+    return arrAuto;
 }
 
 function arrayCardClear() {
@@ -34,7 +34,7 @@ function arrayCardAdd() {
     let sum = +document.getElementById('n23').value;
     let price = +document.getElementById('n24').value;
     arrayCard(name, sum, price);
-    document.getElementById('out2').innerHTML = name + '  ' + sum + ' шт по цене ' + price + '$' + '<br/>' + 'всего в базе ' + arr.length + ' поз.';
+    document.getElementById('out2').innerHTML = name + '  ' + sum + ' шт по цене ' + price + '$' + '<br/>' + 'всего в базе ' + arrAuto.length + ' поз.';
     arrayCardClear();
 }
 
@@ -54,15 +54,15 @@ function arrayAllCardList() {
     document.getElementById('sel-2').innerHTML = '';
     let selectNameDel = document.getElementById('sel-2');
     let opti = '';
-    for (let i = 0; i < arr.length; i++) {
-        document.getElementById('out1').innerHTML += '<br/>' + arr[i].name + " " + arr[i].qty + ' шт';
-        selectNameDel.appendChild(Option(arr[i].name))
+    for (let i = 0; i < arrAuto.length; i++) {
+        document.getElementById('out1').innerHTML += '<br/>' + arrAuto[i].name + " " + arrAuto[i].qty + ' шт';
+        selectNameDel.appendChild(Option(arrAuto[i].name))
     }
     /*   selectNameDel.addEventListener('change', delList() {
                let selectNameForDel = selectNameDel.options[selectNameDel.selectedIndex].value;
-               for (let i = 0; i < arr.length; i++) {
-                   if (arr[i].name === selectNameForDel) {
-                       arr.splice(i,1)
+               for (let i = 0; i < arrAuto.length; i++) {
+                   if (arrAuto[i].name === selectNameForDel) {
+                       arrAuto.splice(i,1)
                    }
                }
            }
@@ -72,17 +72,14 @@ function arrayAllCardList() {
 function delList() {
     debugger
     let delList = document.getElementById('sel-2');
-    delList.addEventListener('change', function f() {
         let selectNameForDel = delList.options[delList.selectedIndex].value;
-        for (let i = 0; i < arr.length; i++) {
-            if (arr[i].name === selectNameForDel) {
-                arr.splice(i, 1);
+        for (let i = 0; i < arrAuto.length; i++) {
+            if (arrAuto[i].name === selectNameForDel) {
+                arrAuto.splice(i, 1);
             }
         }
-    })
     arrayAllCardList()
 }
-
 
 function func(aa, ab, ac) {
     let obj = {name: '', qty: 0, price: 0};
@@ -120,14 +117,14 @@ function arrayCardBay() {
     debugger
     let selList = document.getElementById('sel-1').value;
     let inputQty = +document.getElementById('i-1').value;
-    for (let i = 0; i < arr.length; i++) {
-        if (mas.length === 0 && arr[i].name === selList) {
-            func(arr[i].name, inputQty, arr[i].price);
-        } else if (arr[i].name === selList) {
+    for (let i = 0; i < arrAuto.length; i++) {
+        if (mas.length === 0 && arrAuto[i].name === selList) {
+            func(arrAuto[i].name, inputQty, arrAuto[i].price);
+        } else if (arrAuto[i].name === selList) {
             for (let j = 0; j < mas.length; j++) {
-                if (mas[j].name === arr[i].name && arr[i].qty > 0) {
+                if (mas[j].name === arrAuto[i].name && arrAuto[i].qty > 0) {
                     mas[j].qty += inputQty;
-                    arr[i].qty -= mas[j].qty;
+                    arrAuto[i].qty -= mas[j].qty;
                     let checkName = document.querySelectorAll('.checkName');
                     let checkQty = document.querySelectorAll('.checkQty');
                     checkName.forEach(function (cn, i) {
@@ -140,8 +137,8 @@ function arrayCardBay() {
             }
             if (
                 mas.findIndex(el => el.name === selList) === -1) {
-                func(arr[i].name, inputQty, arr[i].price);
-                arr[i].qty -= inputQty;
+                func(arrAuto[i].name, inputQty, arrAuto[i].price);
+                arrAuto[i].qty -= inputQty;
                 break;
             }
 
@@ -157,16 +154,16 @@ function reload() {
     document.getElementById('sel-1').innerHTML = ''
     let selectName = document.getElementById('sel-1');
     let price = document.getElementById('priceBay');
-    if (selectName.length !== arr.length) {
-        for (; i < arr.length; i++) {
-            selectName.appendChild(Option(arr[i].name));
+    if (selectName.length !== arrAuto.length) {
+        for (; i < arrAuto.length; i++) {
+            selectName.appendChild(Option(arrAuto[i].name));
         }
     }
     selectName.addEventListener('change', function f() {
             let selectNameForQty = selectName.options[selectName.selectedIndex].value;
-            for (let i = 0; i < arr.length; i++) {
-                if (arr[i].name === selectNameForQty) {
-                    price.innerHTML = arr[i].price;
+            for (let i = 0; i < arrAuto.length; i++) {
+                if (arrAuto[i].name === selectNameForQty) {
+                    price.innerHTML = arrAuto[i].price;
                 }
             }
         }

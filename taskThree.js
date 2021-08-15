@@ -29,6 +29,7 @@ function complete(){
     }
 }
 function textStyle() {
+    debugger
     let sizes = document.getElementById('fz');
     let weights = document.getElementById('sel-3');
     let letters = document.getElementById('sel-4');
@@ -36,10 +37,10 @@ function textStyle() {
     let outText = document.querySelector('.exampleText').value;
     let color = document.getElementById('col-1').value;
     let out = document.getElementById('outText');
-   out.style.fontSize = sizes.options[sizes.selectedIndex].value + 'px'
-   out.style.fontWeight = weights.options[weights.selectedIndex].value
-   out.style.textDecoration = decoration.options[decoration.selectedIndex].value
-   out.style.letterSpacing = letters.options[letters.selectedIndex].value + 'px'
+   out.style.fontSize = sizes.options[sizes.selectedIndex].value + 'px';
+   out.style.fontWeight = weights.options[weights.selectedIndex].value;
+   out.style.textDecoration = decoration.options[decoration.selectedIndex].value;
+   out.style.letterSpacing = letters.options[letters.selectedIndex].value + 'px';
     out.style.color = color;
     out.innerHTML = outText;
 }
